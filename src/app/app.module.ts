@@ -12,6 +12,7 @@ import { TermsOfServicePage } from '../pages/terms-of-service/terms-of-service';
 
 import { AngularFireModule } from 'angularfire2';
 
+
 // Providers
 import { DataProvider } from '../providers/data';
 import { AuthProvider } from '../providers/auth';
