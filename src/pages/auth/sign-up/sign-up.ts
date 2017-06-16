@@ -38,6 +38,8 @@ export class SignUpPage {
       this.auth.loginWithEmail(registerData).subscribe(loginData => {
         setTimeout(() => {
           loading.dismiss();
+
+          // A CHANGER ICI LE NOM HOMEPAGE PAR LE NOM DE LA PAGE QUE VOUS TESTEZ ! ATTENTION A BIEN REMETTRE HOMEPAGE AVANT DE COMMIT
           this.navCtrl.setRoot(HomePage);
         }, 1000);
       }, loginError => {

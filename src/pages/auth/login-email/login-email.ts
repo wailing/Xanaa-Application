@@ -40,8 +40,10 @@ export class LoginEmailPage {
     this.auth.loginWithEmail(this.form).subscribe(loginData => {
       setTimeout(() => {
         loading.dismiss();
+
+        // A CHANGER ICI LE NOM HOMEPAGE PAR LE NOM DE LA PAGE QUE VOUS VOULEZ TESTEZ ! ATTENTION A BIEN REMETTRE HOMEPAGE AVANT DE COMMIT
         this.navCtrl.setRoot(HomePage);
-        // The auth subscribe method inside the app.ts will handle the page switch to home
+
       }, 1000);
     }, err => {
       setTimeout(() => {
