@@ -130,6 +130,10 @@ export class AuthProvider {
   }
 
   logout() {
-    this.af.auth.logout();
+  firebase.auth().signOut().then(function() {
+// Deconnexion réussie
+}).catch(function(error) {
+// An error happened.
+});
   }
 }
