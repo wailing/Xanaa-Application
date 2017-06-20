@@ -4,6 +4,7 @@ import { LoginEmailPage } from '../login-email/login-email';
 import { AuthProvider } from '../../../providers/auth';
 
 import { HomePage } from '../../home/home';
+import { FormPage } from '../../form/form';
 
 @Component({
   templateUrl: 'sign-up.html',
@@ -13,6 +14,7 @@ import { HomePage } from '../../home/home';
 export class SignUpPage {
   error: any;
   form: any;
+  public rootPage: any = HomePage;
 
   constructor(private navCtrl: NavController,
     private auth: AuthProvider,
@@ -40,7 +42,7 @@ export class SignUpPage {
           loading.dismiss();
 
           // A CHANGER ICI LE NOM HOMEPAGE PAR LE NOM DE LA PAGE QUE VOUS TESTEZ ! ATTENTION A BIEN REMETTRE HOMEPAGE AVANT DE COMMIT
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.push(FormPage);
         }, 1000);
       }, loginError => {
         setTimeout(() => {

@@ -4,6 +4,8 @@ import { AuthProvider } from '../../providers/auth';
 import {App} from "ionic-angular";
 import { LoadingController } from 'ionic-angular';
 import { AuthPage } from '../auth/home/home';
+import { DocsAdminPage } from '../docs-admin/menu/menu';
+
 
 @Component({
   templateUrl: 'home.html',
@@ -16,13 +18,17 @@ export class HomePage {
 
 
   logout() {
-  let loading = this.loadingCtrl.create({
-    content: 'Patientez...'
-  });
-  loading.present();
-  loading.dismiss();
+    let loading = this.loadingCtrl.create({
+      content: 'Patientez...'
+    });
+    loading.present();
+    loading.dismiss();
     this.auth.logout();
     this.navCtrl.setRoot(AuthPage);
+  }
+
+  openDocsAdministratifMenu(): void {
+    this.navCtrl.push(DocsAdminPage);
   }
 
 }

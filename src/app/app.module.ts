@@ -9,6 +9,9 @@ import { LoginEmailPage } from '../pages/auth/login-email/login-email';
 import { SignUpPage } from '../pages/auth/sign-up/sign-up';
 import { HomePage } from '../pages/home/home';
 import { TermsOfServicePage } from '../pages/terms-of-service/terms-of-service';
+import { FormPage } from '../pages/form/form';
+import { DocsAdminPage } from '../pages/docs-admin/menu/menu';
+
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -32,6 +35,8 @@ export const firebaseConfig = {
     LoginEmailPage,
     SignUpPage,
     HomePage,
+    FormPage,
+    DocsAdminPage,
     TermsOfServicePage
   ],
   imports: [
@@ -46,6 +51,8 @@ export const firebaseConfig = {
     LoginEmailPage,
     SignUpPage,
     HomePage,
+    FormPage,
+    DocsAdminPage,
     TermsOfServicePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, DataProvider, AuthProvider]
