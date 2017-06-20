@@ -28,7 +28,16 @@ export class HomePage {
     this.navCtrl.setRoot(AuthPage);
   }
 
-  openDocsAdministratifMenu(): void {
+  openAdminPage(): void {
+    this.navCtrl.push(DocsAdminPage);
+  }
+  openSantePage(): void {
+    this.navCtrl.push(DocsAdminPage);
+  }
+  openLogementPage(): void {
+    this.navCtrl.push(DocsAdminPage);
+  }
+  openAutoPage(): void {
     this.navCtrl.push(DocsAdminPage);
   }
 
