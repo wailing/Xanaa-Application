@@ -5,6 +5,7 @@ import {App} from "ionic-angular";
 import { LoadingController } from 'ionic-angular';
 import { AuthPage } from '../auth/home/home';
 import { DocsAdminPage } from '../docs-admin/menu/menu';
+import { ProfilPage } from '../profil/profil';
 
 
 @Component({
@@ -31,4 +32,7 @@ export class HomePage {
     this.navCtrl.push(DocsAdminPage);
   }
 
+  openProfilPage(): void {
+    this.navCtrl.push(ProfilPage);
+  }
 }

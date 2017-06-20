@@ -11,6 +11,8 @@ import { HomePage } from '../pages/home/home';
 import { TermsOfServicePage } from '../pages/terms-of-service/terms-of-service';
 import { FormPage } from '../pages/form/form';
 import { DocsAdminPage } from '../pages/docs-admin/menu/menu';
+import { ProfilPage } from '../pages/profil/profil';
+
 
 
 import { AngularFireModule } from 'angularfire2';
@@ -37,6 +39,7 @@ export const firebaseConfig = {
     HomePage,
     FormPage,
     DocsAdminPage,
+    ProfilPage,
     TermsOfServicePage
   ],
   imports: [
@@ -53,6 +56,7 @@ export const firebaseConfig = {
     HomePage,
     FormPage,
     DocsAdminPage,
+    ProfilPage,
     TermsOfServicePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, DataProvider, AuthProvider]

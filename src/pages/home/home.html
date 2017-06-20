@@ -1,20 +1,18 @@
 <ion-header>
   <ion-navbar primary>
+    <ion-buttons start>
+      <button ion-button (click)="openProfilPage()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Accueil</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-  <p>
-    <button ion-button end color="primary" (click)="logout()" >Se deconnecter</button>
-  </p>
 </ion-header>
-
-
-<ion-menu [content]="mycontent">
-  <ion-content>
-    test123
-    <ion-list>
-      <button ion-button end color="primary" (click)="openDocsAdministratifMenu()">Documents Administratifs</button>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-
-<ion-nav #mycontent [root]="rootPage"></ion-nav>
