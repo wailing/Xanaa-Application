@@ -51,13 +51,13 @@ export class AuthProvider {
         if (error) {
           switch (error.code) {
             case 'INVALID_EMAIL':
-              observer.error('E-mail inválido.');
+              observer.error('E-mail non valide.');
               break;
             case 'EMAIL_TAKEN':
-              observer.error('Este e-mail já está sendo utilizado.');
+              observer.error('Email est deja utilise.');
               break;
             case 'NETWORK_ERROR':
-              observer.error('Aconteceu algum erro ao tentar se conectar ao servidor, tente novamente mais tarde.');
+              observer.error('Service indisponible reessayez plus tard.');
               break;
             default:
               observer.error(error);
