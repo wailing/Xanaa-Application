@@ -6,7 +6,7 @@ import { LoadingController } from 'ionic-angular';
 import { AuthPage } from '../auth/home/home';
 import { DocsAdminPage } from '../docs-admin/menu/menu';
 import { ProfilPage } from '../profil/profil';
-
+import { MenuController } from 'ionic-angular';
 
 @Component({
   templateUrl: 'home.html',
@@ -14,10 +14,10 @@ import { ProfilPage } from '../profil/profil';
 })
 export class HomePage {
 
-  constructor(protected app: App, private navCtrl: NavController, private auth: AuthProvider, private loadingCtrl: LoadingController ) {
+  constructor(public menuCtrl: MenuController, protected app: App, private navCtrl: NavController, private auth: AuthProvider, private loadingCtrl: LoadingController ) {
   }
 
-
+// Deconnexion
   logout() {
     let loading = this.loadingCtrl.create({
       content: 'Patientez...'
@@ -28,6 +28,7 @@ export class HomePage {
     this.navCtrl.setRoot(AuthPage);
   }
 
+// Bouttons pour les pages
   openAdminPage(): void {
     this.navCtrl.push(DocsAdminPage);
   }
@@ -44,4 +45,18 @@ export class HomePage {
   openProfilPage(): void {
     this.navCtrl.push(ProfilPage);
   }
+
+  // gestion du meny
+
+  openMenu() {
+  this.menuCtrl.open();
+}
+
+closeMenu() {
+  this.menuCtrl.close();
+}
+
+toggleMenu() {
+  this.menuCtrl.toggle();
+}
 }
