@@ -1,21 +1,38 @@
 <ion-header>
   <ion-navbar primary>
-    <ion-title>Type de documents administratifs</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="openProfilPage()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Xan'Administratif</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-
-<ion-content padding class="typeDocs">
-  <h3>Welcome to your first Ionic app!</h3>
-
-   <p>
-     This starter project is our way of helping you get a functional app running in record time.
-   </p>
-   <p>
-     Follow along on the tutorial section of the Ionic docs!
-   </p>
-   <p>
-     <button ion-button color="primary" menuToggle>Toggle Menu</button>
-   </p>
-
+<ion-content>
+<ion-list>
+  <ion-item>
+  <button ion-button large block color="button1" (click)="openImpotsPage()">
+    Mes impots
+  </button>
+  </ion-item>
+  <ion-item>
+  <button ion-button large block color="button2" (click)="openCAFPage()">
+    Ma C.A.F
+  </button>
+  </ion-item>
+  <ion-item>
+  <button ion-button large block color="button3" (click)="openLogementPage()">
+    Mon logement
+  </button>
+  </ion-item>
+</ion-list>
 </ion-content>

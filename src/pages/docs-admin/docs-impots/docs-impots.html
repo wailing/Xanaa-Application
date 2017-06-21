@@ -1,6 +1,19 @@
 <ion-header>
   <ion-navbar primary>
-    <ion-title>Type de documents administratifs</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="openProfilPage()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mes impots</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 

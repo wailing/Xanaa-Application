@@ -12,7 +12,7 @@ import { TermsOfServicePage } from '../pages/terms-of-service/terms-of-service';
 import { FormPage } from '../pages/form/form';
 import { DocsAdminPage } from '../pages/docs-admin/menu/menu';
 import { ProfilPage } from '../pages/profil/profil';
-
+import { DocumentsImpots } from '../pages/docs-admin/docs-impots/docs-impots';
 
 
 import { AngularFireModule } from 'angularfire2';
@@ -40,7 +40,8 @@ export const firebaseConfig = {
     FormPage,
     DocsAdminPage,
     ProfilPage,
-    TermsOfServicePage
+    TermsOfServicePage,
+    DocumentsImpots
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -57,7 +58,8 @@ export const firebaseConfig = {
     FormPage,
     DocsAdminPage,
     ProfilPage,
-    TermsOfServicePage
+    TermsOfServicePage,
+    DocumentsImpots
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, DataProvider, AuthProvider]
 })
