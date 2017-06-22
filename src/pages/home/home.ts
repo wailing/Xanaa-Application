@@ -13,7 +13,6 @@ import { MenuController } from 'ionic-angular';
   selector: 'home',
 })
 export class HomePage {
-
   constructor(public menuCtrl: MenuController, protected app: App, private navCtrl: NavController, private auth: AuthProvider, private loadingCtrl: LoadingController ) {
   }
 
@@ -48,15 +47,5 @@ export class HomePage {
 
   // gestion du meny
 
-  openMenu() {
-  this.menuCtrl.open();
-}
 
-closeMenu() {
-  this.menuCtrl.close();
-}
-
-toggleMenu() {
-  this.menuCtrl.toggle();
-}
 }
