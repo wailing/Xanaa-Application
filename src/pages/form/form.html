@@ -1,7 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Formulaire d'inscription
+      Données personnelles
     </ion-title>
   </ion-navbar>
 </ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label id="testLbl" stacked>Nom :</ion-label>
+      <ion-input id="nameId" type="text" [(ngModel)]="nameInput" placeholder="{{myUser.name}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email : {{myUser.email}}</ion-label>
+      <ion-input id="emailId" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Genre</ion-label>
+      <ion-select [(ngModel)]="genre">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+  </ion-list>
+
+  <button ion-button round (click)="updateData()">Save</button>
+</ion-content>
