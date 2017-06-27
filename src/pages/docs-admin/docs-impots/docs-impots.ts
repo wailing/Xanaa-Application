@@ -6,11 +6,12 @@ import { AuthProvider } from '../../../providers/auth';
 import { AuthPage } from '../../auth/home/home';
 import {Platform} from 'ionic-angular';
 
-
+import { AppModule } from '../../../app/app.module';
 @Component({
   templateUrl: 'docs-impots.html',
   selector: 'docs-impots',
-})
+  })
+
 export class DocumentsImpots {
   constructor(protected app: App, private navCtrl: NavController, private auth: AuthProvider, private loadingCtrl: LoadingController, public platform : Platform ) {
   }
@@ -32,6 +33,11 @@ export class DocumentsImpots {
     timeStarts: '07:43',
     timeEnds: '1990-02-20'
 }
+
+
+// PDF
+pdfSrc: string = '/pdf-test.pdf';
+page: number = 1;
 
 // Site Web externe
 

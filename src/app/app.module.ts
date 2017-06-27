@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { ThemeableBrowser } from 'ionic-native';
 // Pages
 import { ForgotPasswordPage } from '../pages/auth/forgot-password/forgot-password';
 import { AuthPage } from '../pages/auth/home/home';
@@ -16,7 +16,6 @@ import { DocumentsImpots } from '../pages/docs-admin/docs-impots/docs-impots';
 
 
 import { AngularFireModule } from 'angularfire2';
-
 
 // Providers
 import { DataProvider } from '../providers/data';
@@ -45,7 +44,7 @@ export const firebaseConfig = {
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,4 +62,5 @@ export const firebaseConfig = {
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, DataProvider, AuthProvider]
 })
-export class AppModule {}
+export class AppModule {
+}
