@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Documents administratifs
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-card>
+    <ion-card-header>
+  Impots
+  </ion-card-header>
+  <ion-list>
+  <button ion-item (click)="testPdf()">
+  <ion-icon name="reorder" item-start></ion-icon>
+  Lettre résiliation prélevement automatique
+  </button>
+  </ion-list>
+  </ion-card>
+
+  <ion-card>
+  <ion-card-header>
+  Logement
+  </ion-card-header>
+  <ion-list>
+  <button ion-item onclick="window.open('https://www.impots.gouv.fr/', '_system', 'location=yes')">
+  <ion-icon name="home" item-start></ion-icon>
+  Lettre pré-avis déménagement
+  </button>
+  <button ion-item onclick="window.open('https://www.telepaiement.dgfip.finances.gouv.fr/redirectPart.htm', '_system', 'location=yes')">
+  <ion-icon name="home" item-start></ion-icon>
+  Lettre résiliation assurance habitation
+  </button>
+  </ion-list>
+  </ion-card>
+
+  <ion-card>
+  <ion-card-header>
+  Vie quotidienne
+  </ion-card-header>
+  <ion-list>
+  <button ion-item onclick="window.open('https://www.telepaiement.dgfip.finances.gouv.fr/redirectPart.htm', '_system', 'location=yes')">
+  <ion-icon name="at" item-start></ion-icon>
+  Lettre résiliation abonnement internet/téléphone fixe
+  </button>
+  <button ion-item onclick="window.open('https://www.telepaiement.dgfip.finances.gouv.fr/redirectPart.htm', '_system', 'location=yes')">
+  <ion-icon name="phone-portrait" item-start></ion-icon>
+  Lettre résiliation abonnement mobile
+  </button>
+  <button ion-item onclick="window.open('https://www.telepaiement.dgfip.finances.gouv.fr/redirectPart.htm', '_system', 'location=yes')">
+  <ion-icon name="american-football" item-start></ion-icon>
+  Lettre résiliation abonnement salle de sport
+  </button>
+  </ion-list>
+  </ion-card>
+
+  <ion-card>
+  <ion-card-header>
+  Santé
+  </ion-card-header>
+  <ion-list>
+  <button ion-item onclick="window.open('https://www.telepaiement.dgfip.finances.gouv.fr/redirectPart.htm', '_system', 'location=yes')">
+  <ion-icon name="home" item-start></ion-icon>
+  Lettre résiliation mutuelle
+  </button>
+  </ion-list>
+  </ion-card>
+
+  <ion-card>
+  <ion-card-header>
+  Auto
+  </ion-card-header>
+  <ion-list>
+  <button ion-item onclick="window.open('https://www.telepaiement.dgfip.finances.gouv.fr/redirectPart.htm', '_system', 'location=yes')">
+  <ion-icon name="car" item-start></ion-icon>
+  Lettre résiliation assurance auto
+  </button>
+    </ion-list>
+  </ion-card>
+  </ion-list>
+
+</ion-content>

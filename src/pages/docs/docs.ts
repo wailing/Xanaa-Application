@@ -1,60 +1,30 @@
 import { Component } from '@angular/core';
+
 import { NavController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 import { AuthProvider } from '../../providers/auth';
-import {App} from "ionic-angular";
-import { LoadingController } from 'ionic-angular';
-import { AuthPage } from '../auth/home/home';
-import { DocsAdminPage } from '../docs-admin/menu/menu';
-import { ProfilPage } from '../profil/profil';
-import { MenuController } from 'ionic-angular';
+import { DataProvider } from '../../providers/data';
+import firebase from 'firebase';
+import { AlertController } from 'ionic-angular';
+
+import {AngularFire, FirebaseListObservable} from 'angularFire2';
+
 import * as pdfmake from 'pdfmake/build/pdfmake';
-import { DocsPage } from '../docs/docs';
 
 @Component({
-  templateUrl: 'home.html',
-  selector: 'home',
+  selector: 'page-docs',
+  templateUrl: 'docs.html'
 })
-export class HomePage {
-public rootPage: any = HomePage;
-nameInput: 'lolo';
-myUser: any;
-  constructor(public menuCtrl: MenuController, protected app: App, private navCtrl: NavController, private auth: AuthProvider, private loadingCtrl: LoadingController ) {
-  this.myUser = this.auth.user;
-  console.log(this.myUser);
+export class DocsPage {
+  public rootPage: any = HomePage;
+  nameInput: 'lolo';
+  myUser: any;
+
+  constructor(public navCtrl: NavController, private auth: AuthProvider, public dp: DataProvider, private alertCtrl: AlertController) {
+    this.myUser = this.auth.user;
+    console.log(this.myUser);
   }
 
-// Deconnexion
-  logout() {
-    let loading = this.loadingCtrl.create({
-      content: 'Patientez...'
-    });
-    loading.present();
-    loading.dismiss();
-    this.auth.logout();
-    this.navCtrl.setRoot(AuthPage);
-  }
-
-// Bouttons pour les pages
-  openAdminPage(): void {
-    this.navCtrl.push(DocsAdminPage);
-  }
-  openSantePage(): void {
-    this.navCtrl.push(DocsAdminPage);
-  }
-  openLogementPage(): void {
-    this.navCtrl.push(DocsAdminPage);
-  }
-  openAutoPage(): void {
-    this.navCtrl.push(DocsAdminPage);
-  }
-
-  openProfilPage(): void {
-    this.navCtrl.push(ProfilPage);
-  }
-
-  openDocsPage(): void {
-    this.navCtrl.push(DocsPage);
-  }
   // PDF
   public testPdf() {
   var name = this.myUser.name;
@@ -75,14 +45,41 @@ myUser: any;
             droite: {
          alignment: 'right'
        },
-  	 gauche: {
+     gauche: {
          alignment: 'left'
        }
      }
    };
         console.log(this.myUser.name);
         console.log(dd);
-      pdfmake.createPdf(dd,name).download('Resiliation prelevement impot.pdf');
+      pdfmake.createPdf(dd).getBlob(buffer => {
+  this.file.resolveDirectoryUrl(this.file.externalRootDirectory)
+   .then(dirEntry => {
+      this.file.getFile(dirEntry, 'test1.pdf', { create: true })
+        .then(fileEntry => {
+          fileEntry.createWriter(writer => {
+            writer.onwrite = () => {
+              this.fileOpener.open(fileEntry.toURL(), 'application/pdf')
+                .then(res => { })
+                .catch(err => {
+                  const alert = this.alertCtrl.create({ message:
+err.message, buttons: ['Ok'] });
+                  alert.present();
+                });
+            }
+            writer.write(buffer);
+          })
+        })
+        .catch(err => {
+          const alert = this.alertCtrl.create({ message: err, buttons: ['Ok'] });
+          alert.present();
+        });
+    })
+    .catch(err => {
+      const alert = this.alertCtrl.create({ message: err, buttons: ['Ok']
+});
+      alert.present();
+    });
+});
     }
-
 }
