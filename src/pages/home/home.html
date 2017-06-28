@@ -38,7 +38,30 @@
   <button ion-button large block color="button4" (click)="openLogementPage()">
     Xana'Logement
   </button>
-
+  </ion-item>
+  <ion-item>
+  <button ion-button large block color="button5" (click)="openPortefeuillePage()">
+    Xana'Portefeuille
+  </button>
   </ion-item>
 </ion-list>
+<ion-fab  left bottom>
+    <button ion-fab color="dark" ><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab (click)="openDocsPage()"><ion-icon name="document"></ion-icon></button>
+      <button ion-fab><ion-icon name="settings"></ion-icon></button>
+      <button ion-fab><ion-icon name="trash"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-card>
+    <ion-card-content>
+      Hello World, this is my camera app
+
+      <button (click)="takePicture()">Take a Picture</button>
+
+      Latest Picture:
+      <img [src]="base64Image" *ngIf="base64Image" />
+    </ion-card-content>
+  </ion-card>
 </ion-content>

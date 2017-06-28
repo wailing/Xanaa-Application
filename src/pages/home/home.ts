@@ -9,12 +9,20 @@ import { ProfilPage } from '../profil/profil';
 import { MenuController } from 'ionic-angular';
 import * as pdfmake from 'pdfmake/build/pdfmake';
 import { DocsPage } from '../docs/docs';
+import {Camera} from 'ionic-native';
+import {Page} from 'ionic-angular';
 
 @Component({
   templateUrl: 'home.html',
   selector: 'home',
 })
+
+@Page({
+  templateUrl: 'build/pages/home/home.html'
+})
+
 export class HomePage {
+public base64Image: string;
 public rootPage: any = HomePage;
 nameInput: 'lolo';
 myUser: any;
@@ -84,5 +92,20 @@ myUser: any;
         console.log(dd);
       pdfmake.createPdf(dd,name).download('Resiliation prelevement impot.pdf');
     }
+
+  // PRENDRE PHOTO
+  takePicture(){
+    Camera.getPicture({
+        destinationType: Camera.DestinationType.DATA_URL,
+        targetWidth: 1000,
+        targetHeight: 1000
+    }).then((imageData) => {
+      // imageData is a base64 encoded string
+        this.base64Image = "data:image/jpeg;base64," + imageData;
+    }, (err) => {
+        console.log(err);
+    });
+  }
+}
 
 }
