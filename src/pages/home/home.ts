@@ -9,26 +9,29 @@ import { ProfilPage } from '../profil/profil';
 import { MenuController } from 'ionic-angular';
 import * as pdfmake from 'pdfmake/build/pdfmake';
 import { DocsPage } from '../docs/docs';
-import {Camera} from 'ionic-native';
-import {Page} from 'ionic-angular';
+import {Camera, CameraOptions } from 'ionic-native';
+import { AlertController } from 'ionic-angular';
+import { MenuPortefeuille } from '../portefeuille/menu/menu';
 
 @Component({
   templateUrl: 'home.html',
   selector: 'home',
+  providers: [Camera]
 })
 
-@Page({
-  templateUrl: 'build/pages/home/home.html'
-})
 
 export class HomePage {
 public base64Image: string;
 public rootPage: any = HomePage;
 nameInput: 'lolo';
 myUser: any;
-  constructor(public menuCtrl: MenuController, protected app: App, private navCtrl: NavController, private auth: AuthProvider, private loadingCtrl: LoadingController ) {
+captureDataUrl: string;
+imageURL
+
+  constructor(public menuCtrl: MenuController, protected app: App, private navCtrl: NavController, private auth: AuthProvider, private loadingCtrl: LoadingController, public camera: Camera, private alertCtrl: AlertController ) {
   this.myUser = this.auth.user;
   console.log(this.myUser);
+  this.alertCtrl = alertCtrl;
   }
 
 // Deconnexion
@@ -63,6 +66,12 @@ myUser: any;
   openDocsPage(): void {
     this.navCtrl.push(DocsPage);
   }
+
+  openPortefeuillePage(): void {
+    this.navCtrl.push(MenuPortefeuille);
+  }
+
+
   // PDF
   public testPdf() {
   var name = this.myUser.name;
@@ -94,18 +103,68 @@ myUser: any;
     }
 
   // PRENDRE PHOTO
-  takePicture(){
-    Camera.getPicture({
-        destinationType: Camera.DestinationType.DATA_URL,
-        targetWidth: 1000,
-        targetHeight: 1000
-    }).then((imageData) => {
-      // imageData is a base64 encoded string
-        this.base64Image = "data:image/jpeg;base64," + imageData;
+  takePhoto(){
+    Camera.getPicture().then((imageData) => {
+       this.imageURL = imageData
     }, (err) => {
-        console.log(err);
+       console.log(err);
     });
   }
-}
+
+
+
+
+
+  capture() {
+      const cameraOptions: CameraOptions = {
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        encodingType: Camera.EncodingType.JPEG,
+        mediaType: Camera.MediaType.PICTURE,
+      };
+
+      Camera.getPicture(cameraOptions).then((imageData) => {
+        // imageData is either a base64 encoded string or a file URI
+        // If it's base64:
+        this.captureDataUrl = imageData;
+        console.log("iciiiiii");
+      }, (err) => {
+        // Handle error
+      });
+    }
+
+    upload() {
+        let storageRef = firebase.storage().ref();
+        // Create a timestamp as filename
+        const filename = Math.floor(Date.now() / 1000);
+        console.log("iciiiii2i");
+
+        // Create a reference to 'images/todays-date.jpg'
+        const imageRef = storageRef.child('images/${filename}.jpg');
+        console.log("iciiiiii3");
+
+        imageRef.putString(this.imageURL, firebase.storage.StringFormat.DATA_URL).then((snapshot)=> {
+         // Do something here when the data is succesfully uploaded!
+         console.log("iciiiiii4");
+
+         this.showSuccesfulUploadAlert();
+
+        });
+
+      }
+
+    showSuccesfulUploadAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Uploaded!',
+      subTitle: 'Picture is uploaded to Firebase',
+      buttons: ['OK']
+    });
+    alert.present();
+
+    // clear the previous photo data in the variable
+    this.imageURL = "";
+    }
+
+
 
 }

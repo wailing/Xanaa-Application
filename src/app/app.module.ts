@@ -14,6 +14,10 @@ import { DocsAdminPage } from '../pages/docs-admin/menu/menu';
 import { ProfilPage } from '../pages/profil/profil';
 import { DocumentsImpots } from '../pages/docs-admin/docs-impots/docs-impots';
 import { DocsPage } from '../pages/docs/docs';
+import { MenuPortefeuille } from '../pages/portefeuille/menu/menu';
+import { DocsPortefeuille } from '../pages/portefeuille/docs-portefeuille/docs-portefeuille';
+
+
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -41,7 +45,9 @@ export const firebaseConfig = {
     ProfilPage,
     TermsOfServicePage,
     DocumentsImpots,
-    DocsPage
+    DocsPage,
+    MenuPortefeuille,
+    DocsPortefeuille
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -60,7 +66,9 @@ export const firebaseConfig = {
     ProfilPage,
     TermsOfServicePage,
     DocumentsImpots,
-    DocsPage
+    DocsPage,
+    MenuPortefeuille,
+    DocsPortefeuille
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, DataProvider, AuthProvider]
 })

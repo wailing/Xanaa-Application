@@ -45,6 +45,7 @@
   </button>
   </ion-item>
 </ion-list>
+
 <ion-fab  left bottom>
     <button ion-fab color="dark" ><ion-icon name="add"></ion-icon></button>
     <ion-fab-list side="right">
@@ -54,14 +55,16 @@
     </ion-fab-list>
   </ion-fab>
 
-  <ion-card>
-    <ion-card-content>
-      Hello World, this is my camera app
+  <button ion-button color="dark" (click)="takePhoto()">Take Photo</button>
+<img [src]="imageURL" *ngIf="imageURL" />
 
-      <button (click)="takePicture()">Take a Picture</button>
 
-      Latest Picture:
-      <img [src]="base64Image" *ngIf="base64Image" />
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+  <div style="display:flex; flex-direction:column;justify-content:center">
+     <button ion-button (click)="takePhoto()">Lets take a picture!</button>
+     <img [src]="imageURL" *ngIf="imageURL" />
+
+     <button ion-button (click)="upload()" *ngIf="imageURL">Upload to Firebase!</button>
+
+   </div>
+
+ </ion-content>

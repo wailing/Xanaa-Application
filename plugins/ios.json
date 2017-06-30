@@ -1,0 +1,53 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "1920970564816385",
+            "APP_NAME": "Xanaa Application",
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-themeablebrowser": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2angularfirelogin248208"
+        }
+    }
+}

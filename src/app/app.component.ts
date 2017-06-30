@@ -8,6 +8,7 @@ import { AuthPage } from '../pages/auth/home/home';
 import { DataProvider } from '../providers/data';
 import { AuthProvider } from '../providers/auth';
 import { ProfilPage } from '../pages/profil/profil';
+import firebase from 'firebase';
 
 @Component({
   templateUrl: 'app.html'
@@ -32,9 +33,20 @@ export class MyApp {
   // Here you can do any higher level native things you might need.
   StatusBar.styleDefault();
   Splashscreen.hide();
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyDcA1dLsAM48clizb5NMGllHdcc-Zzbqw8",
+    authDomain: "xanatest-7734d.firebaseapp.com",
+    databaseURL: "https://xanatest-7734d.firebaseio.com",
+    storageBucket: "xanatest-7734d.appspot.com",
+    messagingSenderId: "1024384654819"
+  };
+
 });
   }
 
+
+  There
   go_to_home(Page){
   this.nav.setRoot(HomePage);
 }
