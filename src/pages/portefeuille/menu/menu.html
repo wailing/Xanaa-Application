@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-buttons start>
+      <button ion-button (click)="openProfilPage()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Xan'Administratif</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+  <button ion-button large block color="button1" (click)="openPortefeuillePage()">
+    Mes impots
+  </button>
+  </ion-item>
+  <ion-item>
+  <button ion-button large block color="button2" (click)="openCAFPage()">
+    Ma C.A.F
+  </button>
+  </ion-item>
+  <ion-item>
+  <button ion-button large block color="button3" (click)="openLogementPage()">
+    Mon logement
+  </button>
+  </ion-item>
+</ion-list>
+</ion-content>
