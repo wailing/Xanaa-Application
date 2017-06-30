@@ -8,7 +8,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Xan'Administratif</ion-title>
+    <ion-title>Xana'Portefeuille</ion-title>
     <ion-buttons end>
       <button ion-button (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
@@ -21,17 +21,22 @@
 <ion-list>
   <ion-item>
   <button ion-button large block color="button1" (click)="openPortefeuillePage()">
-    Mes impots
+    Mes piéces d'identité
   </button>
   </ion-item>
   <ion-item>
   <button ion-button large block color="button2" (click)="openCAFPage()">
-    Ma C.A.F
+    Mes cartes fidélité
   </button>
   </ion-item>
   <ion-item>
   <button ion-button large block color="button3" (click)="openLogementPage()">
-    Mon logement
+    Mon compte bancaire
+  </button>
+  </ion-item>
+  <ion-item>
+  <button ion-button large block color="button3" (click)="openLogementPage()">
+    Mes factures et garanties
   </button>
   </ion-item>
 </ion-list>

@@ -41,8 +41,8 @@ openLogementPage(): void {
 
 presentAlert() {
   let alert = this.alertCtrl.create({
-    title: 'Impots sur le revenu 2017',
-    subTitle: '<p>Vous n avez toujours pas déclaré vos revenus. <p>Pensez à le faire avant le 08 Juillet ',
+    title: 'Fin de la garantie TV',
+    subTitle: '<p>La garantie de 2 ans couvrant les dommages de la TV SONY HDJ87 arrive bientôt à échance. <p>Pensez à la renouveller si necessaire ',
     buttons: ['OK']
   });
   alert.present();

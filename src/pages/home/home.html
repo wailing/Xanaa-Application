@@ -55,16 +55,5 @@
     </ion-fab-list>
   </ion-fab>
 
-  <button ion-button color="dark" (click)="takePhoto()">Take Photo</button>
-<img [src]="imageURL" *ngIf="imageURL" />
-
-
-  <div style="display:flex; flex-direction:column;justify-content:center">
-     <button ion-button (click)="takePhoto()">Lets take a picture!</button>
-     <img [src]="imageURL" *ngIf="imageURL" />
-
-     <button ion-button (click)="upload()" *ngIf="imageURL">Upload to Firebase!</button>
-
-   </div>
 
  </ion-content>
