@@ -8,7 +8,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Accueil</ion-title>
+    <ion-title>Acceuil</ion-title>
     <ion-buttons end>
       <button ion-button (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
@@ -17,34 +17,39 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-<ion-list>
-  <ion-item>
-  <button ion-button large block color="button1" (click)="openAdminPage()">
-    Xan'Administratif
-  </button>
-  </ion-item>
-  <ion-item>
-  <button ion-button large block color="button2" (click)="openAutoPage()">
-    Xan'Auto
-  </button>
-  </ion-item>
-  <ion-item>
-  <button ion-button large block color="button3" (click)="openSantePage()">
-    Xana'SAnté
-  </button>
-  </ion-item>
-  <ion-item>
-  <button ion-button large block color="button4" (click)="openLogementPage()">
-    Xana'Logement
-  </button>
-  </ion-item>
-  <ion-item>
-  <button ion-button large block color="button5" (click)="openPortefeuillePage()">
-    Xana'Portefeuille
-  </button>
-  </ion-item>
-</ion-list>
+<ion-content padding class="home">
+
+  <ion-card  (click)="openAdminPage()">
+    <img src="assets/img/administratif-background.jpeg"/>
+    <div class="card-title">Xan'Administratif</div>
+    <div class="card-subtitle">Impots, C.A.F,...</div>
+  </ion-card>
+
+  <ion-card (click)="openAutoPage()">
+    <img src="assets/img/voiture-background.jpg"/>
+    <div class="card-title">Xan'Auto</div>
+    <div class="card-subtitle">RDV au garage, dates de révisions</div>
+  </ion-card>
+
+  <ion-card (click)="openPortefeuillePage()">
+    <img src="assets/img/portefeuille-background.jpg"/>
+    <div class="card-title">Xana'Portefeuille</div>
+    <div class="card-subtitle"> Piéces d'identités, cartes fidélités, garanties ...</div>
+  </ion-card>
+
+  <ion-card (click)="openSantePage()">
+    <img src="assets/img/sante-background.jpg"/>
+    <div class="card-title">Xana'Santé</div>
+    <div class="card-subtitle">RDV avec un médecin, ...</div>
+  </ion-card>
+
+  <ion-card (click)="openLogementPage()">
+    <img src="assets/img/logement-background.jpg"/>
+    <div class="card-title">Xana'Logement</div>
+    <div class="card-subtitle">Documents liés au logement, ...</div>
+  </ion-card>
+
+
 
 <ion-fab  left bottom>
     <button ion-fab color="dark" ><ion-icon name="add"></ion-icon></button>
