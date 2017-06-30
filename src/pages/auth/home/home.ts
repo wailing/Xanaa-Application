@@ -4,7 +4,7 @@ import { LoginEmailPage } from '../login-email/login-email';
 import { SignUpPage } from '../sign-up/sign-up';
 import { TermsOfServicePage } from '../../terms-of-service/terms-of-service';
 import { AuthProvider } from '../../../providers/auth';
-
+import { MenuController } from 'ionic-angular';
 import { HomePage } from '../../home/home';
 
 @Component({
@@ -15,8 +15,13 @@ import { HomePage } from '../../home/home';
 export class AuthPage {
   error: any;
 
-  constructor(private navCtrl: NavController, private auth: AuthProvider) {}
-
+  constructor(
+    private navCtrl: NavController,
+    private auth: AuthProvider,
+    private menuCtrl: MenuController
+  ) {
+    this.menuCtrl.enable(false,'menu'); //Desactivation du slidemenu lors de l'authentification
+  }
   ngOnInit() {
 
   }

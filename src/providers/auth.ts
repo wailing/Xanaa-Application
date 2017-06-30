@@ -12,11 +12,7 @@ import {DataProvider} from './data';
 export class AuthProvider {
   user: any;
   constructor(private af: AngularFire, private data: DataProvider, private platform: Platform) {
-    this.af.database.list('pushTest').push({
-      teste: 'teste'
-    }).then((data) => {
-      console.log(data);
-    });
+
   }
 
   getUserData() {
@@ -39,7 +35,6 @@ export class AuthProvider {
     return Observable.create(observer => {
       this.af.auth.createUser(credentials).then((authData: any) => {
         this.af.database.list('users').update(authData.uid, {
-          name: authData.auth.email,
           email: authData.auth.email,
           emailVerified: false,
           provider: 'email',

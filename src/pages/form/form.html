@@ -1,33 +1,66 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Données personnelles
+      Edition profil
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label id="testLbl" stacked>Nom :</ion-label>
-      <ion-input id="nameId" type="text" [(ngModel)]="nameInput" placeholder="{{myUser.name}}"></ion-input>
-    </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-icon name="contact"></ion-icon>
+      Mon profil
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nom</ion-label>
+        <ion-input id="nameId" type="text" [(ngModel)]="user.name" value={{user.name}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Prenom</ion-label>
+        <ion-input id="firstNameId" type="text" [(ngModel)]="user.firstname" value={{user.firstname}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Genre</ion-label>
+        <ion-select [(ngModel)]="user.genre" >
+          <ion-option value="Homme">Homme</ion-option>
+          <ion-option value="Femme">Femme</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Date de naissance</ion-label>
+        <ion-input id="birthdayId" type="date" [(ngModel)]="user.birthday" value={{user.birthday}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Profession</ion-label>
+        <ion-input id="professionId" type="text" [(ngModel)]="user.profession" value={{user.profession}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input id="emailId" type="email" [(ngModel)]="user.email" value={{user.email}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Téléphone</ion-label>
+        <ion-input id="telId" type="tel" [(ngModel)]="user.phone" value={{user.phone}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Adresse</ion-label>
+        <ion-input id="adressId" type="text" [(ngModel)]="user.adress" value={{user.adress}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Code Postal</ion-label>
+        <ion-input id="postCodeId" type="text" [(ngModel)]="user.postCode" value={{user.postCode}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Ville</ion-label>
+        <ion-input id="cityId" type="text" [(ngModel)]="user.city" value={{user.city}}></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Email : {{myUser.email}}</ion-label>
-      <ion-input id="emailId" type="text"></ion-input>
-    </ion-item>
+    </ion-list>
 
-    <ion-item>
-      <ion-label>Genre</ion-label>
-      <ion-select [(ngModel)]="genre">
-        <ion-option value="male">Male</ion-option>
-        <ion-option value="female">Female</ion-option>
-      </ion-select>
-    </ion-item>
-
-
-  </ion-list>
-
-  <button ion-button round (click)="updateData()">Save</button>
+    <div padding>
+      <button ion-button round (click)="updateData()">Save</button>
+    </div>
+  </ion-card>
 </ion-content>

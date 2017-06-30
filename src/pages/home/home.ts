@@ -32,6 +32,7 @@ imageURL
   this.myUser = this.auth.user;
   console.log(this.myUser);
   this.alertCtrl = alertCtrl;
+  this.menuCtrl.enable(true,'menu'); //Activation du slidemenu lors de l'authentification
   }
 
 // Deconnexion

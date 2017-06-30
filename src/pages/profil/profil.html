@@ -3,16 +3,56 @@
     <ion-title>
       Profil
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="openFormPage()">
+        <ion-icon name="ios-create-outline"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
+
+
 <ion-content>
-  <ion-list>
-    <ion-list-header>Suivez nous sur Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
+
+  <ion-card>
+    <ion-card-title>
+    <ion-item class="card-title">
+      <ion-avatar item-start>
+        <img src="assets/img/profile-icon.png"/>
+      </ion-avatar>
+      <h2 item-end>{{user.firstname}} {{user.name}}</h2>
+      <p item-end>{{user.email}}</p>
     </ion-item>
-    <button ion-button round (click)="openFormPage()">Données personnelles</button>
-  </ion-list>
+</ion-card-title>
+
+    <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <p>
+          <ion-icon name='transgender' item-start style="color: #0080ff"></ion-icon> {{user.genre}}
+        </p>
+      </ion-item>
+      <ion-item>
+        <p>
+          <ion-icon name='ios-briefcase' item-start style="color: #0080ff"></ion-icon> {{user.profession}}
+        </p>
+      </ion-item>
+      <ion-item>
+        <p>
+          <ion-icon name='ios-star' item-start style="color: #0080ff"></ion-icon> {{user.birthday}}
+        </p>
+      </ion-item>
+      <ion-item>
+        <p><ion-icon name="home" style="color:#0080ff"></ion-icon> {{user.adress}}
+          {{user.postCode}} {{user.city}}</p>
+      </ion-item>
+      <ion-item>
+        <p><ion-icon name='call' item-start style="color: #0080ff"> </ion-icon> {{user.phone}}</p>
+      </ion-item>
+
+    </ion-list>
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>
